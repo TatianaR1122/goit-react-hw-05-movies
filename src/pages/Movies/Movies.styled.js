@@ -74,6 +74,6 @@ export const MoviePoster = styled.img`
   }
 `;
 
-export const MovieLink = styled(NavLink)`
+export const Link = styled(NavLink)`
   text-decoration: none;
 `;

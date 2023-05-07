@@ -7,7 +7,8 @@ import {
   Button,
   Form,
   Input,
-  MovieLink,
+  // MovieLink,
+  Link,
   MoviePoster,
   MoviesItem,
   MoviesList,
@@ -69,7 +70,7 @@ const Movies = () => {
         <MoviesList>
           {movies.map(movie => (
             <MoviesItem key={movie.id}>
-              <MovieLink to={`/movies/${movie.id}`} state={{ from: location }}>
+              <Link to={`/movies/${movie.id}`} state={{ from: location }}>
                 <MoviePoster
                   src={
                     movie.poster_path
@@ -80,7 +81,7 @@ const Movies = () => {
                   width="320"
                 />
                 <MovieTitle>{movie.title}</MovieTitle>
-              </MovieLink>
+              </Link>
             </MoviesItem>
           ))}
         </MoviesList>

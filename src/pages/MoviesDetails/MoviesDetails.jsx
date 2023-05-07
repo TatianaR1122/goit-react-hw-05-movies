@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getDetails } from 'services/Api';
+import noPhoto from '../../images/no_image.jpg';
 import {
   About,
   Button,
@@ -37,7 +38,9 @@ const MoviesDetails = () => {
       <Movies>
         <Img
           src={
-            (movie.poster_path = `https://www.themoviedb.org/t/p/w500/${movie.poster_path}`)
+            movie.poster_path
+              ? `https://www.themoviedb.org/t/p/w500/${movie.poster_path}`
+              : noPhoto
           }
           alt={movie.title}
           width="250"
